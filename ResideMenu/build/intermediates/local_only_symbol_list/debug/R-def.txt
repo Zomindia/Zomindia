@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+attr? fontName
+drawable defult_user
+drawable ic_launcher
+drawable login_logo1
+drawable menu_screen_bg
+drawable shadow
+drawable splash_blue
+drawable splash_screen
+drawable splash_screen01
+drawable upload_pic
+drawable user_image_default
+drawable yellow_bg_circle
+id imageViewProfile
+id iv_background
+id iv_icon
+id iv_shadow
+id layout_left_menu
+id layout_right_menu
+id relativeLayout
+id sv_left_menu
+id sv_menu_holder
+id sv_right_menu
+id textView_noti_count
+id tv_title
+id tv_user_name
+layout residemenu_custom
+layout residemenu_custom_left_scrollview
+layout residemenu_custom_right_scrollview
+layout residemenu_item
+string app_name
+styleable MyTextView fontName
