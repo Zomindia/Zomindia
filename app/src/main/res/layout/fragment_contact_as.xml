@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/soft_gray"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@mipmap/background">
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        android:layout_marginRight="@dimen/dp_15"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <TextView
+                            fontPath="@string/font_quicksand_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="Write us something related to booking query/issue/feedback"
+                            android:textColor="@color/red"
+                            android:gravity="center"
+                            android:paddingRight="@dimen/dp_40"
+                            android:scrollbars="vertical"
+                            android:textSize="@dimen/dp_16" />
+
+                        <EditText
+                            android:id="@+id/bookingET"
+                            fontPath="@string/font_quicksand_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:focusableInTouchMode="true"
+                            android:hint="Booking ID"
+                            android:inputType="number"
+                            android:paddingRight="@dimen/dp_40"
+                            android:singleLine="true"
+                            android:textSize="@dimen/dp_16" />
+
+
+                        <EditText
+                            android:id="@+id/commentEditText"
+                            fontPath="@string/font_quicksand_regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_20"
+                            android:hint="Comments"
+                            android:maxHeight="100dp"
+                            android:paddingRight="@dimen/dp_40"
+                            android:scrollbars="vertical"
+                            android:textSize="@dimen/dp_16" />
+
+
+                        
+
+                        <TextView
+                            android:id="@+id/sendTV"
+                            fontPath="@string/font_quicksand_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_margin="30dp"
+                            android:background="@drawable/green_rounded_btn_selector"
+                            android:gravity="center"
+                            android:padding="@dimen/dp_14"
+                            android:text="SEND"
+                            android:textAllCaps="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_size_16" />
+                        <TextView
+                            android:id="@+id/goToHome"
+                            fontPath="@string/font_quicksand_medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginBottom="@dimen/dp_30"
+                            android:background="@drawable/green_rounded_btn_selector"
+                            android:gravity="center"
+                            android:padding="@dimen/dp_14"
+                            android:text="Go to home page"
+                            android:textAllCaps="false"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/text_size_16" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_rounded_bg"
+    >
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="13sp"
+            android:text="Header"
+            android:textColor="@color/black"
+            android:textSize="18sp"  />
+
+        <RelativeLayout
+            android:id="@+id/relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_below="@+id/tv_header"
+            android:background="@color/soft_gray" />
+
+        <RelativeLayout
+            android:id="@+id/relative_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_below="@+id/tv_messages"
+            android:background="@color/soft_gray" />
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_messages">
+
+            <TextView
+                android:id="@+id/button_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/framelayout"
+                android:gravity="center"
+                android:padding="13sp"
+                android:text="Cancel"
+                android:textColor="@color/red"
+                android:textSize="16sp"  />
+
+            <FrameLayout
+                android:id="@+id/framelayout"
+                android:layout_width="0.8dp"
+                android:layout_height="39sp"
+                android:layout_centerInParent="true"
+                android:background="@color/soft_gray"
+                android:clipToPadding="true"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:layoutMode="clipBounds" />
+
+            <TextView
+                android:id="@+id/button_ok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/framelayout"
+                android:gravity="center"
+                android:padding="13sp"
+                android:text="Ok"
+                android:textColor="#0076FF"
+                android:textSize="16sp"  />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_messages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/relativelayout"
+            android:gravity="center"
+            android:padding="18sp"
+            android:text="Message"
+            android:textColor="@color/black"
+            android:textSize="16sp"  />
+    </RelativeLayout>
+
+</RelativeLayout>

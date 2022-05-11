@@ -1,0 +1,238 @@
+<resources>
+    <string name="app_name">zomindia</string>
+
+    <string name="session_expired_msg">Your last login session is expired, please login again.</string>
+    <string name="login">Login</string>
+    <string name="forgot">Forgot Password</string>
+    <string name="registration_form">Registration Form</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="dont_have_an_acount">Don\'t have an account?</string>
+    <string name="yestall">Enter Password</string>
+    <string name="view">View</string>
+    <string name="reschedule">Re-schedule</string>
+    <string name="needhelp">Need Help</string>
+    <string name="canceldialog">Cancel</string>
+    <string name="submiresons">Submit</string>
+    <string name="content">your request to Reschedule / Cancel booking is accepted before we assigned a service expert. if wish too click on need help.</string>
+    <string name="bookedorder">Your Booked order</string>
+
+    <!--Registration form-->
+    <string name="section_1">SECTION 1</string>
+    <string name="section_2">SECTION 2</string>
+    <string name="section_3">SECTION 3</string>
+    <string name="vendor_detail">Vendor details and genral information</string>
+    <string name="name">Name*</string>
+    <string name="mobile_no">Mobile No*</string>
+    <string name="legel_structure">Legel Structure(check one)*</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="bank_account_number">Bank account number</string>
+    <string name="passport_size_photo">Passport Size Photo*</string>
+    <string name="pan_card">Pan Card*</string>
+    <string name="aadhar_card">Aadhar Card*</string>
+    <string name="register">Register</string>
+    <string name="no_internet">oops,please check your internet connection!</string>
+    <string name="failled">Failed server or network connection, please try again</string>
+    <string name="unauthorize_access">Your last login session is expired, please login again.</string>
+    <string name="https_400_error">Bad Request</string>
+    <string name="http_401_error">Unauthorized access</string>
+    <string name="http_403_error">Forbidden or denied access</string>
+    <string name="http_404_error">Resource Not Found</string>
+    <string name="http_402_error">Payment Required</string>
+    <string name="http_405_error">Method Not Allowed</string>
+
+    <string name="logout">Log Out</string>
+    <string name="my_booking">My Booking</string>
+    <string name="my_profile">My Profile</string>
+    <string name="faq">FAQ</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="change_password">My Booking</string>
+
+
+    <string name="home">Home</string>
+    <string name="notification">Notifications</string>
+
+    <string name="pass_length">Password must contain at least 6 Characters or numbers</string>
+    <string name="pass_did_not_match">New password and confirm password does not match</string>
+    <string name="please_enter_password">Please enter Password</string>
+    <string name="please_enter_confirm_password">Please enter Confirm Password</string>
+    <string name="Please_enter_valid_number">Please enter 10 digits mobile number</string>
+    <string name="Please_enter_mobile_number">Please enter mobile number</string>
+    <string name="Please_enter_opt">Please enter OTP number</string>
+    <string name="Please_enter_opt_digits">Please enter 6 digits OTP number</string>
+    <string name="http_406_error">Not Acceptable</string>
+    <string name="http_408_error">Request Time out</string>
+    <string name="http_409_error">conflict in the request</string>
+    <string name="http_500_error">Internal Server Error</string>
+    <string name="http_501_error">Not Implemented</string>
+    <string name="http_503_error">Service Unavailable</string>
+    <string name="http_522_error">Connection Timed Out</string>
+    <string name="http_520_error">Unknown Error</string>
+    <string name="http_526_error">Invalid SSL Certificate</string>
+    <string name="http_599_error">Network connect timeout error</string>
+    <string name="please_check_terms_conditions">Please check terms and conditions</string>
+
+    <!--Application Font-->
+    <string name="font_quicksand_regular">fonts/ProximaNova-Regular.otf</string>
+    <string name="font_quicksand_medium">fonts/Proxima Nova Semibold.otf</string>
+    <string name="font_josefinsans_medium">fonts/Proxima Nova Thin.otf</string>
+    <string name="font_logo_bold">fonts/Nexa Bold.otf</string>
+    <string name="font_logo_light">fonts/Nexa Light.otf</string>
+    <string name="font_header">fonts/Digit.ttf</string>
+
+
+    <string name="review_text">Dear User,\n Profile under review by admin !</string>
+
+    <string name="logout_alert">Sign Out</string>
+    <string name="want_to_logout">Are you sure you want to Sign Out?</string>
+    <string name="want_to_cancel">Are you sure you want to Cancel?</string>
+    <string name="stay_in">Stay In</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="you_credit_card_will_be_charged">You credit card will be charged</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="address">ADDRESS*</string>
+    <string name="telephone_number">TELEPHONE NUMBER</string>
+    <string name="email">E- MAIL ADDRESS*</string>
+    <string name="web_site">WEB SITE ADDRESS</string>
+    <string name="vendor_occupation">VENDOR OCCUPATION*</string>
+    <string name="name_title_of_company">NAME &amp; TITLE OF COMPANY REPRESENTATIVE*</string>
+    <string name="mobile_number_of_comany">MOBILE NUMBERS OF COMPANY REPRESENTATIVE*</string>
+    <string name="email_address_of_company">E- MAIL ADDRESS OF COMPANY REPRESENTATIVE*</string>
+
+    <string name="registration_code">REGISTRATION CODE*</string>
+    <string name="type_of_business">TYPE OF BUSINESS/ COMMODITY SERVICE (CHECK ONE)*</string>
+
+
+    <string name="geographic_service">GEOGRAPHIC SERVICE AREA ( CHECK ONE)*</string>
+    <string name="have_you_previously">HAVE YOU PREVIOUSLY DONE BUSINESS WITH BAGPACK TRAVEL SOLUTION ?</string>
+    <string name="have_you_previously_other">HAVE YOU PREVIOUSLY DONE BUSINESS WITH OTHER TRAVEL ORGANIZATIONS ?</string>
+
+    <string name="local">Local</string>
+    <string name="regional">Regional</string>
+    <string name="national">National</string>
+    <string name="international">International</string>
+
+
+    <string name="beneficiary">BENEFICIARY NAME 1</string>
+    <string name="ifc">IFSC CODE</string>
+    <string name="swift_bank">SWIFT/ BANK IDENTIFIER CODE ( BIC)</string>
+    <string name="micr">MICR</string>
+    <string name="branch">BRANCH</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="please_enter_email_address">Please enter email id</string>
+    <string name="enter_valid_email_id">Please enter valid email id</string>
+    <string name="please_enter_name">Please enter name</string>
+    <string name="please_enter_first_name">Please enter first name</string>
+    <string name="please_select_image">Please Select Image</string>
+    <string name="please_enter_last_name">Please enter last name</string>
+    <string name="please_enter_ethnicity">Please enter Ethnicity</string>
+    <string name="please_enter_message">Please enter Message</string>
+    <string name="please_enter_gender">Please enter Gender</string>
+
+
+    <string name="please_enter_text">Alert please do not share OTP, PIN or Password with anyone</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_sub_category">SubCategoryActivity</string>
+    <string name="no_record">No record found</string>
+    <string name="opps_some">No booking yet, please wait for sometimes.</string>
+
+    <string name="proceed">PROCEED</string>
+    <string name="cancel">CANCEL</string>
+    <string name="done">DONE</string>
+
+
+    <string name="please_select_date">Please Select Date</string>
+    <string name="please_select_time">Please Select Time</string>
+    <string name="please_select_name">Please Select Name</string>
+
+
+    <!--My Edit profile -->
+    <string name="my_edit_profile">MY EDIT PROFILE</string>
+
+    <string name="save">SAVE</string>
+    <string name="enter_first_name">Enter First Name</string>
+    <string name="enter_last_name">Enter Last Name</string>
+    <string name="bar_number">BAR NUMBER*</string>
+    <string name="enter_bar_number">Enter BAR Number</string>
+    <string name="ssn_number">SSN NUMBER*</string>
+    <string name="enter_ssn_number">Enter SSN Number</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+
+    <string name="enter_address">Enter Address</string>
+    <string name="city">CITY</string>
+
+    <string name="enter_city_name">Please Select City</string>
+    <string name="zip_code">ZIP CODE</string>
+    <string name="enter_zip_code">Enter Zip Code</string>
+    <string name="add_bank_details">ADD BANK DETAILS</string>
+
+    <!--      Profile      -->
+
+    <string name="please_enter_address">Please enter address</string>
+    <string name="please_enter_landmark">Please enter nearest landmark</string>
+    <string name="please_select_dob">Please select DOB</string>
+    <string name="please_enter_zip_code">Please enter zip code</string>
+
+
+    <string name="please_enter_category">Please select category</string>
+    <string name="please_enter_subCategory">Please select Subcategory</string>
+    <string name="please_enter_subCategory_type">Please select sub category type</string>
+    <string name="please_enter_provider">Please select provider role</string>
+    <string name="please_enter_work_exp">Please enter work exp.</string>
+    <string name="please_enter_doc">Please select doc image</string>
+    <string name="txt_agree">"I agree to the "</string>
+    <string name="txt_terms"><u>terms and conditions.</u></string>
+
+    <!--Time ago String-->
+    <string name="just_now">Just Now</string>
+    <string name="minute_ago">Minute Ago</string>
+    <string name="minutes_ago">Minutes Ago</string>
+    <string name="hour_ago">Hour Ago</string>
+    <string name="hours_ago">Hours Ago</string>
+    <string name="day_ago">Day Ago</string>
+    <string name="days_ago">Days Ago</string>
+    <string name="week_ago">Week Ago</string>
+    <string name="weeks_ago">Weeks Ago</string>
+    <string name="paytm">(Paytm)</string>
+    <string name="cod">CASH</string>
+    <string name="pay">PAY</string>
+    <string name="oops">Service is empty, Please book a service</string>
+    <string name="share">Share</string>
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Hello Food!</string>
+    <string name="slide_1_desc">The easiest way to order food from your favourite restaurant!</string>
+
+    <string name="slide_2_title">Movie Tickets</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+
+    <string name="slide_3_title">Great Discounts</string>
+    <string name="slide_3_desc">Best discounts on every single service we offer!</string>
+
+    <string name="slide_4_title">World Travel</string>
+    <string name="slide_4_desc">Book tickets of any transportation and travel the world!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="otp">OTP</string>
+
+
+    <string name="facebook_app_id">795086081452085</string>
+    <string name="fb_login_protocol_scheme">fb795086081452085</string>
+    <string name="facebook_client_token">c55d726b78e1a4057acb966f5069c662</string>
+
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_rounded_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                fontPath="@string/font_quicksand_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_12"
+                android:text="Write a reasons for cancellations Order!"
+                android:textSize="@dimen/dp_16" />
+
+            <EditText
+                android:id="@+id/edt_resonsdata"
+                fontPath="@string/font_quicksand_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="@null"
+                android:gravity="left"
+                android:hint="Write Something here. "
+                android:padding="@dimen/dp_12"
+                android:textSize="@dimen/dp_16" />
+
+            <TextView
+                android:id="@+id/submitresons"
+                fontPath="@string/font_quicksand_medium"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:background="@drawable/cyclindry_shape"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="@string/submiresons"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_16" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

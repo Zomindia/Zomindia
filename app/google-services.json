@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "633769247173",
+    "firebase_url": "https://zomindia-1a2d5.firebaseio.com",
+    "project_id": "zomindia-1a2d5",
+    "storage_bucket": "zomindia-1a2d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633769247173:android:ddf4ccb32b32e8f6",
+        "android_client_info": {
+          "package_name": "com.zomindianew"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633769247173-1ffu44jpksrc6uuu48km3buc9q1f3l5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmcL1y9z-6_vZDN8A3vYiGWUHM8hIk8X0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

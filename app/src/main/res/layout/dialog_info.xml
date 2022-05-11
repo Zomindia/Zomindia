@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/informationRL"
+        fontPath="@string/font_quicksand_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/informationTV"
+        android:padding="@dimen/dp_10"
+        android:text="Please read this info"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_20" />
+
+    <TextView
+        android:id="@+id/bookingConfirmText"
+        fontPath="@string/font_quicksand_regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/informationRL"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/blue_rounded_btn_selector"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="CLOSE"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="visible"
+
+        />
+
+</LinearLayout>

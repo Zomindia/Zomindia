@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".comman.activity.SelectionActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:text="Welcome!"
+        android:textColor="#000080"
+        android:textSize="30dp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/dp_40"
+        android:fontFamily="@font/arlrdbd"
+        android:gravity="center"
+        android:text="zomindia"
+        android:textColor="#000080"
+        android:textSize="36dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:text="Home Service Provider"
+        android:textColor="#750596"
+        android:textSize="20dp"
+        android:textStyle="normal" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_150"
+        android:background="@drawable/selection_footer">
+
+        <LinearLayout
+            android:paddingLeft="@dimen/dp_40"
+            android:paddingRight="@dimen/dp_40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnSelectionLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_40"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:background="@mipmap/button_login"
+                android:text="@string/login"
+                android:padding="@dimen/dp_10"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_30"
+                android:textStyle="normal" />
+
+            <Button
+                android:id="@+id/btnSelectionRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_40"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:padding="@dimen/dp_10"
+                android:background="@mipmap/button_login"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_30"
+                android:textStyle="normal" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

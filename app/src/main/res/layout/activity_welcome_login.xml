@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".comman.activity.WelcomeLogin"
+    android:gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_100"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_120"
+            android:src="@drawable/splashnewupdate"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_centerHorizontal="true"
+
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:weightSum="1">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/login_by_email"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="@dimen/dp_30"
+                    android:background="@mipmap/button_login"
+                    android:gravity="center"
+                    android:text="LOGIN WITH EMAIL"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/dp_18" />
+
+                <TextView
+                    android:id="@+id/login_by_otp"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="300dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="@dimen/dp_30"
+                    android:background="@mipmap/button_login"
+                    android:gravity="center"
+                    android:text="LOGIN WITH OTP"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/dp_18"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                fontPath="@string/font_quicksand_regular"
+                android:text="BECOME PARTNER WITH US"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:textSize="@dimen/dp_16"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="#000080"
+
+                />
+            <TextView
+                android:id="@+id/partner_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fontPath="@string/font_quicksand_regular"
+                android:text="Register Here"
+                android:layout_margin="@dimen/dp_5"
+                android:textSize="@dimen/dp_20"
+                android:padding="@dimen/dp_5"
+                android:textStyle="bold"
+
+                android:textColor="@color/green" />
+
+        </LinearLayout>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/partner_logind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_20"
+            android:gravity="right"
+            android:text="Partner Log-In"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_18">
+
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

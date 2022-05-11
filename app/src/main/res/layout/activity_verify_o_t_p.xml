@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbymobile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                fontPath="@string/font_quicksand_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_35"
+                android:layout_marginTop="@dimen/dp_40"
+                android:padding="@dimen/dp_20"
+                android:text="Hello!"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_35" />
+
+            <TextView
+                fontPath="@string/font_quicksand_regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_40"
+                android:gravity="center"
+                android:text="We have sent an OTP on your mobile no."
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_14" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_40"
+                android:background="@drawable/dark_shape"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/edt_verifyotp"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_30"
+                    android:layout_marginTop="@dimen/dp_7"
+                    android:layout_marginRight="@dimen/dp_30"
+                    android:background="@null"
+                    android:hint="Enter OTP"
+                    android:inputType="number"
+                    android:maxEms="6"
+                    android:maxLength="6"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/dp_18" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_verifydone"
+                fontPath="@string/font_quicksand_regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginLeft="@dimen/dp_70"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginRight="@dimen/dp_70"
+                android:background="@drawable/white_btn_shape"
+                android:gravity="center"
+                android:text="Login"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_20" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

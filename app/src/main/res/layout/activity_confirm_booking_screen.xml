@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/soft_gray">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@mipmap/background" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/homeToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/backButtonRelative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/img_back_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/ic_back_white"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/text_header"
+                fontPath="@string/font_quicksand_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_toRightOf="@+id/backButtonRelative"
+                android:gravity="center"
+
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:id="@+id/linear_progress"
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/homeToolbar"
+        android:orientation="horizontal" >
+        <View
+            android:id="@+id/view1"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/green"/>
+
+    </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_progress"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_50"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+
+                        <TextView
+                            android:id="@+id/textView_header"
+                            fontPath="@string/font_quicksand_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:padding="10dp"
+                            android:text="Confirm Booking"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <LinearLayout
+                            android:id="@+id/lienerLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/textView_header"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="10dp"
+                                android:weightSum="1"
+                                android:padding="@dimen/dp_5">
+
+
+                                <TextView
+                                    fontPath="@string/font_quicksand_medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="Service"
+                                    android:textFontWeight="1"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="16dp" />
+
+
+                                <TextView
+                                    android:id="@+id/categoryTextView"
+                                    fontPath="@string/font_quicksand_regular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:gravity="right"
+                                    android:textFontWeight="1"
+                                    android:layout_gravity="center"
+                                    android:text="Refrigerator"
+                                    android:textColor="@color/black"
+                                    android:maxLength="60"
+                                    android:textSize="14dp" />
+
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="10dp"
+                                android:padding="@dimen/dp_5">
+
+
+                                <TextView
+                                    fontPath="@string/font_quicksand_medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="Date"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold"
+                                    android:textSize="16dp" />
+
+
+                                <EditText
+                                    android:id="@+id/dateTextViewdate"
+                                    fontPath="@string/font_quicksand_regular"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@null"
+                                    android:focusable="false"
+                                    android:hint="Select date"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="14sp" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="10dp"
+                                android:padding="@dimen/dp_5">
+
+
+                                <TextView
+                                    android:id="@+id/time"
+                                    fontPath="@string/font_quicksand_medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="Time"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="16dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/time"
+                                    android:layout_marginTop="@dimen/dp_10"
+                                     android:layout_marginLeft="@dimen/dp_10"
+                                    android:orientation="vertical">
+
+                                    <RadioGroup
+                                        android:id="@+id/firstgroup"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <RadioButton
+                                            android:id="@+id/red_9"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="09AM - 10AM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                        <RadioButton
+                                            android:id="@+id/red_10"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="10AM - 11AM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+                                    </RadioGroup>
+
+                                    <RadioGroup
+                                        android:id="@+id/secondgroup"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <RadioButton
+                                            android:id="@+id/red_11"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="11AM - 12AM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                        <RadioButton
+                                            android:id="@+id/red_12"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="12AM - 01PM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                    </RadioGroup>
+
+                                    <RadioGroup
+                                        android:id="@+id/thirdgroup"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <RadioButton
+                                            android:id="@+id/red_01"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="01PM - 02PM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                        <RadioButton
+                                            android:id="@+id/red_02"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="02PM - 3PM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                    </RadioGroup>
+
+                                    <RadioGroup
+                                        android:id="@+id/fourgroup"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <RadioButton
+                                            android:id="@+id/red_03"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="03PM - 04PM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                        <RadioButton
+                                            android:id="@+id/red_04"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="04PM - 05PM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+
+                                    </RadioGroup>
+
+
+                                    <RadioGroup
+                                        android:id="@+id/fivegroup"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <RadioButton
+                                            android:id="@+id/red_05"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="05PM - 06PM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                        <RadioButton
+                                            android:id="@+id/red_06"
+                                            fontPath="@string/font_quicksand_regular"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_5"
+                                            android:layout_weight="1"
+                                            android:background="@color/white"
+                                            android:buttonTint="@color/green"
+                                            android:checked="false"
+                                            android:text="06PM - 07PM"
+                                            android:textColor="@color/black"
+                                            android:textSize="14sp" />
+
+                                    </RadioGroup>
+
+
+                                    <!--<LinearLayout-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:orientation="horizontal"-->
+                                    <!--android:weightSum="2">-->
+
+
+                                    <!--</LinearLayout>-->
+
+
+                                </LinearLayout>
+                            </RelativeLayout>
+
+                            <!--<RelativeLayout-->
+                            <!--android:id="@+id/nameRelative"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:padding="@dimen/dp_5">-->
+
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/name"-->
+                            <!--fontPath="@string/font_quicksand_medium"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:text="Name"-->
+                            <!--android:textColor="@color/black"-->
+                            <!--android:textSize="16sp" />-->
+
+
+                            <!--<EditText-->
+                            <!--android:id="@+id/nameTextView"-->
+                            <!--fontPath="@string/font_quicksand_regular"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:background="@null"-->
+                            <!--android:hint="Enter Name"-->
+                            <!--android:singleLine="true"-->
+                            <!--android:text=""-->
+                            <!--android:textColor="@color/black"-->
+                            <!--android:textSize="14sp" />-->
+
+
+                            <!--</RelativeLayout>-->
+
+                            <!--<RelativeLayout-->
+                            <!--android:id="@+id/emailRelative"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:layout_marginTop="10dp"-->
+                            <!--android:padding="@dimen/dp_5">-->
+
+
+                            <!--<TextView-->
+                            <!--android:id="@+id/email"-->
+                            <!--fontPath="@string/font_quicksand_medium"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:text="Email"-->
+                            <!--android:textColor="@color/black"-->
+                            <!--android:textSize="16sp" />-->
+
+
+                            <!--<EditText-->
+                            <!--android:id="@+id/emailTextView"-->
+                            <!--fontPath="@string/font_quicksand_regular"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_marginLeft="10dp"-->
+                            <!--android:background="@null"-->
+                            <!--android:hint="Enter email"-->
+                            <!--android:singleLine="true"-->
+                            <!--android:textColor="@color/black"-->
+                            <!--android:textSize="14sp" />-->
+
+
+                            <!--</RelativeLayout>-->
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="10dp"
+                                android:padding="@dimen/dp_5">
+
+
+<TextView
+android:id="@+id/addressText"
+fontPath="@string/font_quicksand_medium"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="10dp"
+android:text="Address"
+android:textStyle="bold"
+android:textColor="@color/black"
+android:textSize="18dp" />
+
+
+<EditText
+android:id="@+id/addressTextEdit"
+fontPath="@string/font_quicksand_regular"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_below="@+id/addressText"
+android:layout_marginLeft="10dp"
+android:layout_marginTop="10dp"
+android:hint="Enter booking address"
+android:textColor="@color/black"
+android:textSize="16dp"
+android:layout_margin="4dp"
+android:background="@drawable/dark_shape"
+android:padding="10dp"
+    android:maxLines="3"
+    android:singleLine="false"
+android:textColorHint="#8F8D8D"
+    android:maxLength="150"
+    android:inputType="textMultiLine"
+    android:scrollbars="vertical"
+/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:padding="@dimen/dp_5">
+
+
+            <TextView
+                android:id="@+id/addressText2"
+                fontPath="@string/font_quicksand_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Nearest Landmark"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18dp"  />
+
+
+            <EditText
+                android:id="@+id/addressTextEdit2"
+                fontPath="@string/font_quicksand_regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addressText2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:hint="Enter nearest landmark"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/dark_shape"
+                android:padding="10dp"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:textColorHint="#8F8D8D"
+                android:maxLength="150"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:padding="@dimen/dp_5"
+            android:visibility="visible">
+
+
+            <TextView
+                fontPath="@string/font_quicksand_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Total Price : "
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18dp" />
+
+
+            <TextView
+                android:id="@+id/totalPriceText"
+                fontPath="@string/font_quicksand_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="200"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/paymentButton"
+        fontPath="@string/font_quicksand_regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lienerLayout"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        android:background="@drawable/blue_rounded_btn_selector"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="CONFIRM"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:visibility="visible"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paymentButton"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:orientation="vertical">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/noteTV"
+            fontPath="@string/font_quicksand_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alternate Contact Person Details "
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="@dimen/dp_10"
+            android:textSize="@dimen/dp_20" />
+        </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edt_name"
+            fontPath="@string/font_quicksand_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/noteTV"
+            android:hint="Enter Name"
+            android:padding="@dimen/dp_8"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/dark_shape"
+            android:inputType="text"
+         />
+      </LinearLayout>
+
+             <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/edt_mobile_no"
+            fontPath="@string/font_quicksand_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/noteTV"
+            android:hint="Enter Mobile No."
+            android:layout_marginTop="@dimen/dp_10"
+  android:layout_marginBottom="@dimen/dp_5"
+            android:maxLength="10"
+            android:singleLine="true"
+            android:padding="@dimen/dp_8"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/dark_shape"
+            android:inputType="number"
+           />
+
+             </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/sendcomment"
+            fontPath="@string/font_quicksand_regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@+id/noteTV"
+            android:hint="Any comment for Service expert"
+
+            android:layout_marginTop="@dimen/dp_10"
+            android:textColor="@color/black"
+            android:maxLines="4"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/dark_shape"
+            android:padding="10dp"
+            android:singleLine="false"
+            android:textColorHint="#8F8D8D"
+            android:maxLength="500"
+            android:inputType="textMultiLine"
+            android:scrollbars="vertical"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+</ScrollView>
+
+
+
+
+</RelativeLayout>

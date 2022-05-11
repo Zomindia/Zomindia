@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:ignore="MissingPrefix">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="5dp"
+        card_view:cardUseCompatPadding="true">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp">
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/defult_user" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@+id/image"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/image">
+
+                    <TextView
+                        android:id="@+id/name"
+                        fontPath="@string/font_quicksand_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="David Cro"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:id="@+id/dateTextView"
+                        fontPath="@string/font_quicksand_regular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:singleLine="true"
+                        android:text="8 April 2019"
+                        android:textColor="@color/dark_gray"
+                        android:textSize="15sp" />
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/categoryTextView"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="Refrigerator"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/categoryTV"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/subCategoryTV"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/subCategoryType"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/addressText"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@mipmap/location"
+                    android:drawablePadding="10dp"
+                    android:singleLine="true"
+                    android:text="Akshya Nagar 1 st Block Indore MP..... "
+                    android:textColor="@color/dark_gray"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/time"
+                    fontPath="@string/font_quicksand_regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/image"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@mipmap/time"
+                    android:drawablePadding="10dp"
+                    android:singleLine="true"
+                    android:text="12:00 PM"
+                    android:textColor="@color/dark_gray"
+                    android:textSize="15sp" />
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/image"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="20dp">
+
+                    <TextView
+                        android:id="@+id/acceptButton"
+                        fontPath="@string/font_quicksand_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:gravity="left"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10"
+                        android:singleLine="true"
+                        android:text="Accept"
+                        android:textColor="@color/green"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/declineButton"
+                        fontPath="@string/font_quicksand_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:singleLine="true"
+                        android:text="Decline"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="18sp" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
