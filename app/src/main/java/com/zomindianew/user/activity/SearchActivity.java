@@ -106,13 +106,13 @@ public class SearchActivity extends AppCompatActivity {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(getApplicationContext());
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), getApplicationContext());
+                            Constants.showToastAlert(getResources().getString(R.string.failled), getApplicationContext());
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), getApplicationContext());
+                        Constants.showToastAlert(getResources().getString(R.string.failled), getApplicationContext());
                     }
                 } catch (JSONException e) {
 //                    Constants.hideProgressDialog();

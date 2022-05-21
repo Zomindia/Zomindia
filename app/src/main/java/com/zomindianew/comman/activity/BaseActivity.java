@@ -13,7 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -281,12 +281,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         client.startSmsUserConsent(null).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getApplicationContext(), "On Success", Toast.LENGTH_LONG).show();
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "On OnFailure", Toast.LENGTH_LONG).show();
+
             }
         });
 
@@ -344,7 +344,7 @@ public abstract class BaseActivity extends AppCompatActivity {
                 //That gives all message to us.
                 // We need to get the code from inside with regex
                 String message = data.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE);
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+
                 getOtpFromMessage(message);
             }
         }
@@ -356,7 +356,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         Matcher matcher = pattern.matcher(message);
         if (matcher.find()) {
             String otp = matcher.group(0);
-            Toast.makeText(getApplicationContext(), otp, Toast.LENGTH_LONG).show();
+
             try {
                 SPOTP.setOTP(this,otp);
                 SPOTP.setTime(this,System.currentTimeMillis());

@@ -142,10 +142,7 @@ public class AddSkillActivity extends BaseActivity implements View.OnClickListen
                 } else if (subCategory.equals("")) {
                     Constants.showToastAlert(getResources().getString(R.string.please_enter_subCategory), AddSkillActivity.this);
 
-                } /*else if (subCategoryType.equals("")) {
-                    Constants.showToastAlert(getResources().getString(R.string.please_enter_subCategory_type), AddSkillActivity.this);
-
-                } */else {
+                } else {
                     for (int i = 0; i < skillActivityArrayList.size(); i++) {
                         String categryID = skillActivityArrayList.get(i).getSubCAtegoryID();
                         if (subCategoryID.equals(categryID)) {
@@ -224,13 +221,13 @@ public class AddSkillActivity extends BaseActivity implements View.OnClickListen
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(AddSkillActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), AddSkillActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), AddSkillActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -292,13 +289,13 @@ public class AddSkillActivity extends BaseActivity implements View.OnClickListen
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(AddSkillActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), AddSkillActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), AddSkillActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -362,13 +359,13 @@ public class AddSkillActivity extends BaseActivity implements View.OnClickListen
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(AddSkillActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), AddSkillActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), AddSkillActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -561,13 +558,13 @@ public class AddSkillActivity extends BaseActivity implements View.OnClickListen
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(AddSkillActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), AddSkillActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), AddSkillActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -651,13 +648,13 @@ public class AddSkillActivity extends BaseActivity implements View.OnClickListen
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(AddSkillActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), AddSkillActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), AddSkillActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), AddSkillActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

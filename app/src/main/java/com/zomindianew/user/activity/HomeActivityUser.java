@@ -152,8 +152,7 @@ public class HomeActivityUser extends BaseActivity implements View.OnClickListen
         setUpMenu();
         textView_header.setText("Home");
         editProfile.setVisibility(View.GONE);
-//        pleaseSelectTV.setVisibility(View.GONE);
-        // changeFragment(new HomeFragment(), "HomeFragment");
+
 
         img_back_arrow = findViewById(R.id.img_back_arrow);
         img_back_arrow.setOnClickListener(new View.OnClickListener() {
@@ -505,13 +504,13 @@ public class HomeActivityUser extends BaseActivity implements View.OnClickListen
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(HomeActivityUser.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), HomeActivityUser.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), HomeActivityUser.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), HomeActivityUser.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), HomeActivityUser.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

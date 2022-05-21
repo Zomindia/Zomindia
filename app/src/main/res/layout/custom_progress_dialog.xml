@@ -22,16 +22,30 @@
         android:padding="5dp"
         android:text="Loading"
         android:textColor="@color/colorPrimary"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"
+        />
 
     <com.wang.avi.AVLoadingIndicatorView
         android:id="@+id/avi"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginLeft="5dp"
-        android:visibility="visible"
+        android:visibility="gone"
+
         app:indicatorColor="@color/colorPrimary"
         app:indicatorName="BallClipRotateIndicator" />
+
+    <ProgressBar
+        android:id="@+id/loading_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/gradient_loader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 
 </LinearLayout>

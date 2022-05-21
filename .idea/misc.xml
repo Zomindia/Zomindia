@@ -3,7 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Zomindia/app/src/main/res/drawable/button_background.xml" value="0.132" />
+        <entry key="..\:/Zomindia/app/src/main/res/drawable/custom_toast.xml" value="0.1" />
+        <entry key="..\:/Zomindia/app/src/main/res/drawable/cyclindry_shape.xml" value="0.1955" />
+        <entry key="..\:/Zomindia/app/src/main/res/drawable/gradient_loader.xml" value="0.114" />
         <entry key="..\:/Zomindia/app/src/main/res/drawable/ic_dowarrow.xml" value="0.171" />
+        <entry key="..\:/Zomindia/app/src/main/res/drawable/ic_success.xml" value="0.132" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/activity_confirm_booking_screen.xml" value="0.5" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/checkout_dialog.xml" value="0.33" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/custom_progress_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/dialog_cancel.xml" value="0.20416666666666666" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/dialog_infol.xml" value="0.25" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/dialog_paytem.xml" value="0.20416666666666666" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/dialog_success.xml" value="0.20416666666666666" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/fragment_appointment.xml" value="0.20416666666666666" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/fragment_on_going.xml" value="0.20416666666666666" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/selectsub_adapter_layout.xml" value="0.5" />
+        <entry key="..\:/Zomindia/app/src/main/res/layout/sub_category_adpter.xml" value="0.67" />
       </map>
     </option>
   </component>

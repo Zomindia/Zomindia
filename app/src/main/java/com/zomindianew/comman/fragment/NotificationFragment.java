@@ -175,7 +175,7 @@ public class NotificationFragment extends Fragment {
                             Intent intent = new Intent(getActivity(), HomeActivityUser.class);
                             startActivity(intent);
                             getActivity().finishAffinity();
-                            Toast.makeText(getActivity(), "Your request has been canceled !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Your request has been cancelled !!", Toast.LENGTH_SHORT).show();
                             dialog1.dismiss();
 
 
@@ -186,13 +186,13 @@ public class NotificationFragment extends Fragment {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(getActivity());
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), getActivity());
+                            Constants.showToastAlert(getResources().getString(R.string.failled), getActivity());
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), getActivity());
+                        Constants.showToastAlert(getResources().getString(R.string.failled), getActivity());
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -409,13 +409,13 @@ public class NotificationFragment extends Fragment {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(getActivity());
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), getActivity());
+                            Constants.showToastAlert(getResources().getString(R.string.failled), getActivity());
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), getActivity());
+                        Constants.showToastAlert(getResources().getString(R.string.failled), getActivity());
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

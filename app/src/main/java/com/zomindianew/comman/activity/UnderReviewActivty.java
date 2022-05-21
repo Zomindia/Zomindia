@@ -84,13 +84,13 @@ public class UnderReviewActivty extends BaseActivity {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(UnderReviewActivty.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), UnderReviewActivty.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), UnderReviewActivty.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), UnderReviewActivty.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), UnderReviewActivty.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

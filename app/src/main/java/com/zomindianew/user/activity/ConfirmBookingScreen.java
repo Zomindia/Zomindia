@@ -1,22 +1,27 @@
 package com.zomindianew.user.activity;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -77,6 +82,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
     private EditText addressTextEdit;
     private EditText addressTextEdit2;
     private TextView paymentButton;
+    private TextView tv_change;
     private RelativeLayout emailRelative;
     private RelativeLayout nameRelative;
     private String order_id;
@@ -90,6 +96,8 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
     int number, number1;
 
     TextView textView_header;
+    LinearLayout lv_time_slot;
+    TextView tv_no_time_slot;
     private ImageView img_back_arrow;
 
     EditText edtnew, edtname, edtmobile, edtcomment;
@@ -131,11 +139,12 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         edtname = (EditText) findViewById(R.id.edt_name);
         edtmobile = (EditText) findViewById(R.id.edt_mobile_no);
         edtcomment = (EditText) findViewById(R.id.sendcomment);
+        lv_time_slot = (LinearLayout)findViewById(R.id.lv_time_slot);
+        tv_no_time_slot = (TextView) findViewById(R.id.tv_no_time_slot);
+        tv_change = (TextView) findViewById(R.id.tv_change);
         SimpleDateFormat dateFormat = new SimpleDateFormat("hh. aa");
         formattedDate = dateFormat.format(new Date()).toString();
         System.out.println(formattedDate);
-        Toast.makeText(ConfirmBookingScreen.this, formattedDate,
-                Toast.LENGTH_LONG).show();
         sharedpreferences = getApplicationContext().getSharedPreferences(Constants.MyPREFERENCES, Context.MODE_PRIVATE);
         get_email = sharedpreferences.getString("email", "");
         get_uname = sharedpreferences.getString("uname", "");
@@ -148,13 +157,36 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
 //        int seconds = calendar.get(Calendar.SECOND);
 //        System.out.println("Current hour 24hrs format:  " + hour24hrs + ":" + minutes +":"+ seconds);
 //        System.out.println("Current hour 12hrs format:  " + hour12hrs + ":" + minutes +":"+ seconds);
-//        Toast.makeText(ConfirmBookingScreen.this,hour12hrs,
-//                Toast.LENGTH_LONG).show();
 
         edtnew.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                Calendar now = Calendar.getInstance();
+                com.wdullaer.materialdatetimepicker.date.DatePickerDialog dpd = DatePickerDialog.newInstance(
+                        (DatePickerDialog.OnDateSetListener) ConfirmBookingScreen.this,
+                        now.get(Calendar.YEAR),
+                        now.get(Calendar.MONTH),
+                        now.get(Calendar.DAY_OF_MONTH)
+                );
+                dpd.setMinDate(Calendar.getInstance());
+                Calendar noCalendar = Calendar.getInstance();
+                int mYear = now.get(Calendar.YEAR);
+                int mMonth = now.get(Calendar.MONTH);
+                int mDay = now.get(Calendar.DAY_OF_MONTH);
+                noCalendar.set(mYear, mMonth, mDay + 2);
+
+                dpd.setMinDate(Calendar.getInstance());
+                dpd.setMaxDate(noCalendar);
+                dpd.show(getFragmentManager(), "Datepickerdialog");
+
+            }
+        });
+
+        tv_change.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
                 Calendar now = Calendar.getInstance();
                 com.wdullaer.materialdatetimepicker.date.DatePickerDialog dpd = DatePickerDialog.newInstance(
                         (DatePickerDialog.OnDateSetListener) ConfirmBookingScreen.this,
@@ -298,6 +330,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
 //        nameTextView = findViewById(R.id.nameTextView);
         addressTextEdit = findViewById(R.id.addressTextEdit);
         addressTextEdit2 = findViewById(R.id.addressTextEdit2);
+
 //        emailRelative = findViewById(R.id.emailRelative);
 //        nameRelative = findViewById(R.id.nameRelative);
 //        if (SharedPreferances.getInstance(ConfirmBookingScreen.this).getString(Constants.USER_PROFILE_COMPLETE).equals("true")) {
@@ -426,20 +459,6 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
 
                     bookingAPI();
 
-//                    number = Integer.parseInt(String.valueOf(selectedIdTime));
-//                     number = Integer.parseInt(String.valueOf(formattedDate));
-//
-//
-//                    if (number>=number1)
-//                    {
-//                        Toast.makeText(ConfirmBookingScreen.this,"yes",
-//                                Toast.LENGTH_LONG).show();
-//                    }
-//                    else
-//                    {
-//                        Toast.makeText(ConfirmBookingScreen.this,"no",
-//                                Toast.LENGTH_LONG).show();
-//                    }
 
                 } else {
                     final ViewGroup viewGroup = (ViewGroup) ((ViewGroup) ConfirmBookingScreen.this.findViewById(android.R.id.content)).getChildAt(0);
@@ -457,16 +476,6 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                 Constants.showToastAlert(getResources().getString(R.string.please_select_time), ConfirmBookingScreen.this);
             }
 
-//            else if (nameStr.equals("")) {
-//                Constants.showToastAlert(getResources().getString(R.string.please_enter_name), ConfirmBookingScreen.this);
-//            }
-//            else if (emailStr.equals("")) {
-//                Constants.showToastAlert(getResources().getString(R.string.please_enter_email_address), ConfirmBookingScreen.this);
-//            }
-
-//            else if (!Constants.isValidEmail(emailStr)) {
-//                Constants.showToastAlert(getResources().getString(R.string.enter_valid_email_id), ConfirmBookingScreen.this);
-//            }
             else if (addressStr.equals("")) {
                 Constants.showToastAlert(getResources().getString(R.string.please_enter_address), ConfirmBookingScreen.this);
             } else if (addressStr2.equals("")) {
@@ -542,15 +551,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
 
 
-       /* if (dayOfMonth < 10 || monthOfYear < 10) {
-            String dayof = String.valueOf(dayOfMonth);
-            String moth = String.valueOf(monthOfYear);
-            dayof = ("0" + dayof);
-            moth = ("0" + moth);
-            dateStr = year + "-" + moth + "-" + dayof;
-        } else {
 
-        }*/
         dateStr = Constants.getDateInFormat("yyyy-MM-dd", "yyyy-MM-dd", year + "-" + (monthOfYear+1) + "-" + dayOfMonth);
         edtnew.setText(Constants.getDateInFormat("yyyy-MM-dd", "MMM dd,yyyy", String.valueOf(dateStr)));
 
@@ -572,7 +573,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red9.setVisibility(View.VISIBLE);
         }else{
-            red9.setVisibility(View.INVISIBLE);
+            red9.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,10);
@@ -580,7 +581,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red10.setVisibility(View.VISIBLE);
         }else{
-            red10.setVisibility(View.INVISIBLE);
+            red10.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,11);
@@ -588,7 +589,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red11.setVisibility(View.VISIBLE);
         }else{
-            red11.setVisibility(View.INVISIBLE);
+            red11.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,12);
@@ -596,7 +597,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red12.setVisibility(View.VISIBLE);
         }else{
-            red12.setVisibility(View.INVISIBLE);
+            red12.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,13);
@@ -604,7 +605,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red13.setVisibility(View.VISIBLE);
         }else{
-            red13.setVisibility(View.INVISIBLE);
+            red13.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,14);
@@ -612,7 +613,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red14.setVisibility(View.VISIBLE);
         }else{
-            red14.setVisibility(View.INVISIBLE);
+            red14.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,15);
@@ -620,7 +621,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red15.setVisibility(View.VISIBLE);
         }else{
-            red15.setVisibility(View.INVISIBLE);
+            red15.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,16);
@@ -628,7 +629,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red16.setVisibility(View.VISIBLE);
         }else{
-            red16.setVisibility(View.INVISIBLE);
+            red16.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,17);
@@ -636,7 +637,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red17.setVisibility(View.VISIBLE);
         }else{
-            red17.setVisibility(View.INVISIBLE);
+            red17.setVisibility(View.GONE);
         }
 
         calendar.set(Calendar.HOUR_OF_DAY,18);
@@ -644,8 +645,22 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
         {
             red18.setVisibility(View.VISIBLE);
         }else{
-            red18.setVisibility(View.INVISIBLE);
+            red18.setVisibility(View.GONE);
         }
+
+        if (red9.getVisibility()==View.VISIBLE||red10.getVisibility()==View.VISIBLE||red12.getVisibility()==View.VISIBLE||
+                red13.getVisibility()==View.VISIBLE||red14.getVisibility()==View.VISIBLE||red15.getVisibility()==View.VISIBLE||
+                red16.getVisibility()==View.VISIBLE||red17.getVisibility()==View.VISIBLE||red18.getVisibility()==View.VISIBLE)
+        {
+            lv_time_slot.setVisibility(View.VISIBLE);
+            tv_no_time_slot.setVisibility(View.GONE);
+        }
+        else
+        {
+            lv_time_slot.setVisibility(View.GONE);
+            tv_no_time_slot.setVisibility(View.VISIBLE);
+        }
+
         ++monthOfYear;
     }
 
@@ -741,7 +756,8 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                             Log.e("h.2...", "two");
 
 
-                            paymentDialog(String.valueOf(amountNew));
+                           // paymentDialog(String.valueOf(amountNew));
+                            showInfoDialog(String.valueOf(amountNew));
                         } else if (object.optString(Constants.SUCCESS).equalsIgnoreCase(Constants.FALSE)) {
                             Constants.showFalseMessage(object, ConfirmBookingScreen.this);
                             Log.e("h.3..", "three");
@@ -751,7 +767,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(ConfirmBookingScreen.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), ConfirmBookingScreen.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), ConfirmBookingScreen.this);
                             Log.e("h.4..", "four");
 
                         }
@@ -759,7 +775,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), ConfirmBookingScreen.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), ConfirmBookingScreen.this);
                         Log.e("h.5..", "five");
 
                     }
@@ -837,13 +853,13 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(ConfirmBookingScreen.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), ConfirmBookingScreen.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), ConfirmBookingScreen.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), ConfirmBookingScreen.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), ConfirmBookingScreen.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -888,7 +904,6 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
 
     @Override
     public void someUIErrorOccurred(String s) {
-        Constants.showToastAlert(s, ConfirmBookingScreen.this);
         Log.e("checksum ", " ui fail respon  " + s);
     }
 
@@ -937,7 +952,16 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                         Log.d("tag", object.toString(1));
                         if (object.optString(Constants.SUCCESS).equalsIgnoreCase(Constants.TRUE)) {
                             JSONObject jsonObject = object.optJSONObject("data");
-                            Intent intent = new Intent(ConfirmBookingScreen.this, HomeActivityUser.class);
+
+                            try {
+                                showSuccessCustomDialog(id);
+                            }
+                            catch (Exception e)
+                            {
+                                Log.e("error",e.toString());
+                            }
+
+                            /*Intent intent = new Intent(ConfirmBookingScreen.this, HomeActivityUser.class);
                             startActivity(intent);
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                                 finishAffinity();
@@ -946,7 +970,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                                 Constants.showToastAlert("Your booking has been received.", ConfirmBookingScreen.this);
                             } else {
                                 Constants.showToastAlert("Your booking has been received and payment has been received through paytm!!", ConfirmBookingScreen.this);
-                            }
+                            }*/
 
                         } else if (object.optString(Constants.SUCCESS).equalsIgnoreCase(Constants.FALSE)) {
                             Constants.showFalseMessage(object, ConfirmBookingScreen.this);
@@ -978,6 +1002,7 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
 
     }
     public void GetTime() {
+
         Api api = ApiFactory.getClient(ConfirmBookingScreen.this).create(Api.class);
         Call<ResponseBody> call;
 
@@ -1008,6 +1033,11 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                                 afterTime = 2;
                             }
                             timestamp = timestamp+(afterTime*60*60*1000);
+
+
+                            currentDate();
+
+
                         } else if (object.optString(Constants.SUCCESS).equalsIgnoreCase(Constants.FALSE)) {
                             Constants.showFalseMessage(object, ConfirmBookingScreen.this);
                         }
@@ -1015,13 +1045,13 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(ConfirmBookingScreen.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), ConfirmBookingScreen.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), ConfirmBookingScreen.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), ConfirmBookingScreen.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), ConfirmBookingScreen.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -1034,6 +1064,261 @@ public class ConfirmBookingScreen extends BaseActivity implements View.OnClickLi
                 Constants.hideProgressDialog();
             }
         });
+
+
+
+
+
     }
 
+
+    public void currentDate()
+    {
+        Calendar now = Calendar.getInstance();
+
+
+        Calendar noCalendar = Calendar.getInstance();
+        int mYear = now.get(Calendar.YEAR);
+        int mMonth = now.get(Calendar.MONTH);
+        int mDay = now.get(Calendar.DAY_OF_MONTH);
+Log.e("date",mYear+"/"+mMonth+"/"+mDay);
+
+   setCurrentDate(mYear,mMonth,mDay);
+
+    }
+
+
+        public void setCurrentDate( int year, int monthOfYear, int dayOfMonth) {
+
+
+
+        dateStr = Constants.getDateInFormat("yyyy-MM-dd", "yyyy-MM-dd", year + "-" + (monthOfYear+1) + "-" + dayOfMonth);
+        edtnew.setText(Constants.getDateInFormat("yyyy-MM-dd", "MMM dd,yyyy", String.valueOf(dateStr)));
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year,monthOfYear,dayOfMonth,0,0,0);
+        red9.setChecked(false);
+        red10.setChecked(false);
+        red11.setChecked(false);
+        red12.setChecked(false);
+        red13.setChecked(false);
+        red14.setChecked(false);
+        red15.setChecked(false);
+        red16.setChecked(false);
+        red17.setChecked(false);
+        red18.setChecked(false);
+
+        calendar.set(Calendar.HOUR_OF_DAY,9);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red9.setVisibility(View.VISIBLE);
+        }else{
+            red9.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,10);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red10.setVisibility(View.VISIBLE);
+        }else{
+            red10.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,11);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red11.setVisibility(View.VISIBLE);
+        }else{
+            red11.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,12);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red12.setVisibility(View.VISIBLE);
+        }else{
+            red12.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,13);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red13.setVisibility(View.VISIBLE);
+        }else{
+            red13.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,14);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red14.setVisibility(View.VISIBLE);
+        }else{
+            red14.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,15);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red15.setVisibility(View.VISIBLE);
+        }else{
+            red15.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,16);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red16.setVisibility(View.VISIBLE);
+        }else{
+            red16.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,17);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red17.setVisibility(View.VISIBLE);
+        }else{
+            red17.setVisibility(View.GONE);
+        }
+
+        calendar.set(Calendar.HOUR_OF_DAY,18);
+        if(calendar.getTimeInMillis()>timestamp)
+        {
+            red18.setVisibility(View.VISIBLE);
+        }else{
+            red18.setVisibility(View.GONE);
+        }
+
+
+        if (red9.getVisibility()==View.VISIBLE||red10.getVisibility()==View.VISIBLE||red12.getVisibility()==View.VISIBLE||
+                red13.getVisibility()==View.VISIBLE||red14.getVisibility()==View.VISIBLE||red15.getVisibility()==View.VISIBLE||
+                red16.getVisibility()==View.VISIBLE||red17.getVisibility()==View.VISIBLE||red18.getVisibility()==View.VISIBLE)
+        {
+            lv_time_slot.setVisibility(View.VISIBLE);
+            tv_no_time_slot.setVisibility(View.GONE);
+        }
+        else
+        {
+            lv_time_slot.setVisibility(View.GONE);
+            tv_no_time_slot.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+
+
+    private void showInfoDialog(final String amountRe) {
+
+        try {
+
+
+            final Dialog dialog = new Dialog(ConfirmBookingScreen.this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.setContentView(R.layout.checkout_dialog);
+            TextView tv_info_detail = dialog.findViewById(R.id.tv_info_detail);
+            TextView tv_service_date = dialog.findViewById(R.id.tv_service_date);
+
+            TextView tv_booking_confirm = dialog.findViewById(R.id.tv_booking_confirm);
+            TextView tv_service_time = dialog.findViewById(R.id.tv_service_time);
+            TextView tv_service_amount = dialog.findViewById(R.id.tv_service_amount);
+            ImageView closeImageView = dialog.findViewById(R.id.closeImageView);
+
+            tv_service_amount.setText("Total Price : " + amountRe + "" + " ₹");
+
+            tv_info_detail.setText("Service : "+categoryTextView.getText().toString());
+            tv_service_date.setText("Date of Service : "+ edtnew.getText().toString());
+
+            if (mCheckedId == R.id.red_9) {
+                tv_service_time.setText("Time of Service : 09AM - 10AM");
+
+            } else if (mCheckedId == R.id.red_10) {
+                tv_service_time.setText("Time of Service : 10AM - 11AM");
+
+            } else if (mCheckedId == R.id.red_11) {
+                tv_service_time.setText("Time of Service : 11AM - 12PM");
+            } else if (mCheckedId == R.id.red_12) {
+                tv_service_time.setText("Time of Service : 12PM - 01PM");
+            } else if (mCheckedId == R.id.red_01) {
+                tv_service_time.setText("Time of Service : 01PM - 02PM");
+            } else if (mCheckedId == R.id.red_02) {
+                tv_service_time.setText("Time of Service : 02PM - 3PM");
+            } else if (mCheckedId == R.id.red_03) {
+                tv_service_time.setText("Time of Service : 03PM - 04PM");
+            } else if (mCheckedId == R.id.red_04) {
+                tv_service_time.setText("Time of Service : 04PM - 05PM");
+            } else if (mCheckedId == R.id.red_05) {
+                tv_service_time.setText("Time of Service : 05PM - 06PM");
+            } else if (mCheckedId == R.id.red_06) {
+                tv_service_time.setText("Time of Service : 06PM - 07PM");
+            }
+
+            closeImageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.cancel();
+
+                }
+            });
+            tv_booking_confirm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    transationAPI(id, "cod", amountRe);
+                    dialog.cancel();
+
+                }
+            });
+
+            dialog.show();
+        }
+        catch (Exception e)
+        {
+            Log.e("error",e.toString());
+        }
+
+    }
+
+
+    private void showSuccessCustomDialog(String booking_id) {
+        //before inflating the custom alert dialog layout, we will get the current activity viewgroup
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+
+        //then we will inflate the custom alert dialog xml that we created
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_success, viewGroup, false);
+
+        Button ok = dialogView.findViewById(R.id.buttonOk);
+        TextView tv_message = dialogView.findViewById(R.id.tv_message);
+        //Now we need an AlertDialog.Builder object
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        //setting the view of the builder to our custom view that we already inflated
+        builder.setView(dialogView);
+
+        //finally creating the alert dialog and displaying it
+        final AlertDialog alertDialog = builder.create();
+
+
+        tv_message.setText("Congratulations your booking is successfully confirmed and your booking id is "+ booking_id + ", To know more about booking status you can see all details in Booking details+");
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmBookingScreen.this, HomeActivityUser.class);
+                startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    finishAffinity();
+                }
+
+
+                alertDialog.dismiss();
+
+                    Constants.showToastAlert("Your booking has been received.", ConfirmBookingScreen.this);
+
+            }
+        });
+        alertDialog.show();
+    }
 }
+
+
+

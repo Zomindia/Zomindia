@@ -12,8 +12,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
         android:layout_marginBottom="@dimen/dp_7"
         android:background="@color/white"
+        android:elevation="20dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -27,6 +30,16 @@
                 android:layout_marginRight="@dimen/dp_10"
                 android:orientation="vertical">
 
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_width="@dimen/dp_120"
+                    android:layout_height="@dimen/dp_110"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/carwash" />
+
                 <androidx.cardview.widget.CardView
                     android:layout_width="@dimen/dp_120"
                     android:layout_height="@dimen/dp_110"
@@ -35,12 +48,7 @@
                     card_view:cardCornerRadius="@dimen/dp_7">
 
 
-                    <ImageView
-                        android:id="@+id/image"
-                        android:layout_width="@dimen/dp_120"
-                        android:layout_height="@dimen/dp_110"
-                        android:scaleType="fitXY"
-                        android:src="@mipmap/carwash" />
+
 
                 </androidx.cardview.widget.CardView>
 
@@ -55,6 +63,7 @@
 
 
                 <TextView
+                    android:layout_marginLeft="@dimen/dp_5"
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -67,6 +76,8 @@
 
 
                 <LinearLayout
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:padding="@dimen/dp_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -75,25 +86,26 @@
                         android:id="@+id/relative_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp_7"
-                        >
-                    <TextView
-                        android:id="@+id/info"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Info"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/dp_16"
-                        android:textColor="@color/green"/>
 
-                <ImageView
-                    android:id="@+id/img_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitStart"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:layout_toRightOf="@+id/info"
-                    android:background="@drawable/ic_information"/>
+                        >
+
+                        <TextView
+                            android:id="@+id/info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Info"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/dp_16"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/img_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_toRightOf="@+id/info"
+                            android:background="@drawable/ic_information"
+                            android:scaleType="fitStart" />
 
                     </RelativeLayout>
 
@@ -146,9 +158,10 @@
 
 
                 <LinearLayout
+                    android:padding="@dimen/dp_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_5"
+
                     android:layout_marginBottom="@dimen/dp_5"
                     android:orientation="horizontal">
 

@@ -161,13 +161,13 @@ public class PartnerLoginActivity extends AppCompatActivity implements View.OnCl
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(PartnerLoginActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), PartnerLoginActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), PartnerLoginActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), PartnerLoginActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), PartnerLoginActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

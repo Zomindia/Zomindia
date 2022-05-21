@@ -1,10 +1,16 @@
 package com.zomindianew.user.activity;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,16 +20,22 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zomindianew.R;
 import com.zomindianew.bean.ServiceSubCategoryBean;
 import com.zomindianew.bean.SubCategoryBean;
 import com.zomindianew.comman.activity.BaseActivity;
+import com.zomindianew.comman.fragment.ContactAsFragment;
+import com.zomindianew.comman.fragment.FaqFragment;
 import com.zomindianew.helper.Constants;
 import com.zomindianew.helper.ErrorUtils;
 import com.zomindianew.helper.MySharedPreferances;
+import com.zomindianew.providernew.activity.BookingDetailActivity;
 import com.zomindianew.user.adapter.ServiceCategoryAdapter;
 import com.zomindianew.user.adapter.SubCategoryAdapter;
 import com.zomindianew.webservice.Api;
@@ -118,9 +130,18 @@ public class SubCategoryActivity extends BaseActivity implements View.OnClickLis
         subCategoryAdapter.onItemClickMethod(new SubCategoryAdapter.ItemInterFace() {
             @Override
             public void onItemClick(View view, int position) {
+
+
+
                 switch (view.getId()) {
-                    case R.id.arrowright:
-//                        getServiceSubCategory(subCategoryBeanArrayList.get(position).getId(), subCategoryBeanArrayList.get(position).getCategory_name());
+                    case R.id.relative_1:
+
+                        showInfoDialog(position);
+
+
+                          break;
+
+                    default:
                         Intent intent= new Intent(SubCategoryActivity.this,SelectSubActivity.class);
                         intent.putExtra("id",subCategoryBeanArrayList.get(position).getId());
                         intent.putExtra("name",subCategoryBeanArrayList.get(position).getCategory_name());
@@ -128,7 +149,10 @@ public class SubCategoryActivity extends BaseActivity implements View.OnClickLis
                         intent.putExtra("categoryName",categoryName);
                         startActivity(intent);
 
+
                         break;
+
+
 
                 }
             }
@@ -183,13 +207,13 @@ public class SubCategoryActivity extends BaseActivity implements View.OnClickLis
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(SubCategoryActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), SubCategoryActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), SubCategoryActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), SubCategoryActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), SubCategoryActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -255,13 +279,13 @@ public class SubCategoryActivity extends BaseActivity implements View.OnClickLis
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(SubCategoryActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), SubCategoryActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), SubCategoryActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), SubCategoryActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), SubCategoryActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -468,5 +492,56 @@ public class SubCategoryActivity extends BaseActivity implements View.OnClickLis
                 finish();
                 break;
         }
+    }
+
+
+
+    private void showInfoDialog(final int position) {
+
+        try {
+
+
+            final Dialog dialog = new Dialog(SubCategoryActivity.this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setCancelable(false);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            dialog.setContentView(R.layout.dialog_infol);
+            TextView category_naame = dialog.findViewById(R.id.category_naame);
+            TextView tv_info_detail = dialog.findViewById(R.id.tv_info_detail);
+            TextView select_service = dialog.findViewById(R.id.select_service);
+            TextView cancel = dialog.findViewById(R.id.cancel);
+
+            tv_info_detail.setText(subCategoryBeanArrayList.get(position).getInfo_desc());
+            category_naame.setText(subCategoryBeanArrayList.get(position).getCategory_name() + " info");
+
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.cancel();
+
+                }
+            });
+            select_service.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(SubCategoryActivity.this, SelectSubActivity.class);
+                    intent.putExtra("id", subCategoryBeanArrayList.get(position).getId());
+                    intent.putExtra("name", subCategoryBeanArrayList.get(position).getCategory_name());
+                    intent.putExtra("cid", categoryId);
+                    intent.putExtra("categoryName", categoryName);
+                    startActivity(intent);
+                    dialog.cancel();
+
+                }
+            });
+
+            dialog.show();
+        }
+        catch (Exception e)
+        {
+            Log.e("error",e.toString());
+        }
+
     }
 }

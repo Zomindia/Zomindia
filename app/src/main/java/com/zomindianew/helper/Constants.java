@@ -307,16 +307,25 @@ public class Constants {
         try {
             Toast toast = Toast.makeText(context, message, Toast.LENGTH_LONG);
             View toastView = toast.getView();
-            TextView toastMessage = (TextView) toastView.findViewById(android.R.id.message);
-            toastMessage.setTextColor(Color.WHITE);
-            toastMessage.setGravity(Gravity.CENTER);
+            if (toastView==null)
+            {
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                TextView toastMessage = (TextView) toastView.findViewById(android.R.id.message);
+                toastMessage.setTextColor(Color.WHITE);
+                toastMessage.setGravity(Gravity.CENTER);
 
-            // Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/RALEWAY-REGULAR_0.OTF");
-            // toastMessage.setTypeface(font);
+                // Typeface font = Typeface.createFromAsset(context.getAssets(), "fonts/RALEWAY-REGULAR_0.OTF");
+                // toastMessage.setTypeface(font);
 
-            toast.getView().setBackgroundResource(R.drawable.custom_toast);
-            toast.show();
+                toast.getView().setBackgroundResource(R.drawable.custom_toast);
+                toast.show();
+            }
+
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

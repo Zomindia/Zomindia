@@ -32,7 +32,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
         ImageView image,imageinfo,arrowright;
         TextView name,rating,information, less;
         LinearLayout subcategoryRelative;
-        RelativeLayout relative_arrow;
+        RelativeLayout relative_arrow,relative_1;
         RatingBar ratingBar;
 
         public MyViewHolder(View view) {
@@ -46,7 +46,10 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
             arrowright = view.findViewById(R.id.arrowright);
             subcategoryRelative = view.findViewById(R.id.subcategoryRelative);
             relative_arrow = view.findViewById(R.id.relative_arrow);
+            relative_1  = view.findViewById(R.id.relative_1);
             arrowright.setOnClickListener(this);
+            relative_1.setOnClickListener(this);
+            subcategoryRelative.setOnClickListener(this);
         }
 
         @Override
@@ -97,7 +100,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
                // .apply(RequestOptions.circleCropTransform())
                 .into(holder.image);
 
-        holder.imageinfo.setOnClickListener(new View.OnClickListener() {
+        /*holder.imageinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 holder.information.setVisibility(View.VISIBLE);
@@ -112,7 +115,7 @@ public class SubCategoryAdapter extends RecyclerView.Adapter<SubCategoryAdapter.
                 holder.less.setVisibility(View.GONE);
 
             }
-        });
+        });*/
 
 
 

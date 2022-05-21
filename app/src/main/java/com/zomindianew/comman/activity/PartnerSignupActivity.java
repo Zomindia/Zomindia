@@ -164,13 +164,13 @@ public class PartnerSignupActivity extends BaseActivity implements View.OnClickL
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(PartnerSignupActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), PartnerSignupActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), PartnerSignupActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), PartnerSignupActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), PartnerSignupActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

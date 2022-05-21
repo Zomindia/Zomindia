@@ -73,13 +73,11 @@ public class ForgetPasswordActivity extends AppCompatActivity {
                         Log.e(",,,,,jjj new ", "" + jsonObject);
                         if (jsonObject.optString("success").equals("true")) {
                             String getmsg = jsonObject.optString("message");
-                            Toast.makeText(getApplicationContext(), getmsg, Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(ForgetPasswordActivity.this, ResetPasswordActivity.class);
                             intent.putExtra("mobile",mobile);
                             startActivity(intent);
                         } else if (jsonObject.optString("success").equals("false")) {
                             JSONObject offerObject = jsonObject.getJSONObject("error");
-                            Toast.makeText(getApplicationContext(), offerObject.optString("message"), Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

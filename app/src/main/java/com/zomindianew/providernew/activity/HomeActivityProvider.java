@@ -389,13 +389,13 @@ public class HomeActivityProvider extends BaseActivity implements View.OnClickLi
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(HomeActivityProvider.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), HomeActivityProvider.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), HomeActivityProvider.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), HomeActivityProvider.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), HomeActivityProvider.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

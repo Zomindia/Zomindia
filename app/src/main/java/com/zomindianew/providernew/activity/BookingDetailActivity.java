@@ -268,13 +268,13 @@ public class BookingDetailActivity extends BaseActivity {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(BookingDetailActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), BookingDetailActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), BookingDetailActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -340,13 +340,13 @@ public class BookingDetailActivity extends BaseActivity {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(BookingDetailActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), BookingDetailActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), BookingDetailActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -405,13 +405,13 @@ public class BookingDetailActivity extends BaseActivity {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(BookingDetailActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), BookingDetailActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), BookingDetailActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
@@ -456,7 +456,7 @@ public class BookingDetailActivity extends BaseActivity {
                         Log.d("tag", object.toString(1));
                         if (object.optString(Constants.SUCCESS).equalsIgnoreCase(Constants.TRUE)) {
                             JSONObject jsonObject = object.optJSONObject("data");
-                            Constants.showToastAlert("thank you for your feedback.", BookingDetailActivity.this);
+                            Constants.showToastAlert("Thank you for your feedback.", BookingDetailActivity.this);
                             Log.e(Constants.LOG_CAT, "API REQUEST LOG OUT Response================>>>>>" + object.toString());
                             Intent intent = new Intent(BookingDetailActivity.this, HomeActivityUser.class);
                             startActivity(intent);
@@ -469,13 +469,13 @@ public class BookingDetailActivity extends BaseActivity {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(BookingDetailActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), BookingDetailActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), BookingDetailActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), BookingDetailActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

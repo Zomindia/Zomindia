@@ -146,13 +146,13 @@ public class PastFragment extends Fragment {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(getActivity());
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), getActivity());
+                            Constants.showToastAlert(getResources().getString(R.string.failled), getActivity());
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), getActivity());
+                        Constants.showToastAlert(getResources().getString(R.string.failled), getActivity());
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

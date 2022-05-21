@@ -178,6 +178,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
+                                    android:layout_alignParentLeft="true"
                                     android:text="Date"
                                     android:textColor="@color/black"
                                     android:textStyle="bold"
@@ -189,18 +190,35 @@
                                     fontPath="@string/font_quicksand_regular"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentRight="true"
                                     android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="@dimen/dp_5"
+                                    android:layout_toLeftOf="@+id/tv_change"
                                     android:background="@null"
                                     android:focusable="false"
-                                    android:hint="Select date"
                                     android:gravity="center"
-                                    android:textStyle="bold"
+                                    android:hint="Select date"
                                     android:textColor="@color/black"
-                                    android:textSize="14sp" />
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_change"
+                                    android:layout_width="wrap_content"
+
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:gravity="right"
+                                    android:text="Change "
+                                    android:textColor="@color/dot_dark_screen1"
+                                    android:textSize="10sp" />
+
 
 
                             </RelativeLayout>
+
+
+
 
                             <RelativeLayout
                                 android:layout_width="match_parent"
@@ -217,16 +235,18 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="10dp"
                                     android:text="Time"
-                                    android:textStyle="bold"
                                     android:textColor="@color/black"
-                                    android:textSize="16dp" />
+                                    android:textSize="16dp"
+                                    android:textStyle="bold" />
 
                                 <LinearLayout
+                                    android:id="@+id/lv_time_slot"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/time"
                                     android:layout_marginTop="@dimen/dp_10"
                                      android:layout_marginLeft="@dimen/dp_10"
+                                    android:visibility="visible"
                                     android:orientation="vertical">
 
                                     <RadioGroup
@@ -282,7 +302,7 @@
                                             android:background="@color/white"
                                             android:buttonTint="@color/green"
                                             android:checked="false"
-                                            android:text="11AM - 12AM"
+                                            android:text="11AM - 12PM"
                                             android:textColor="@color/black"
                                             android:textSize="14sp" />
 
@@ -296,7 +316,7 @@
                                             android:background="@color/white"
                                             android:buttonTint="@color/green"
                                             android:checked="false"
-                                            android:text="12AM - 01PM"
+                                            android:text="12PM - 01PM"
                                             android:textColor="@color/black"
                                             android:textSize="14sp" />
 
@@ -427,6 +447,18 @@
 
 
                                 </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_no_time_slot"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/time"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:gravity="center"
+                                    android:visibility="gone"
+                                    android:text="Time slots are not available for selected date"
+                                    android:textColor="@color/dot_dark_screen1"
+                                    android:textSize="@dimen/text_size_16" />
                             </RelativeLayout>
 
                             <!--<RelativeLayout-->

@@ -13,7 +13,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.facebook.appevents.AppEventsLogger;
 import com.google.firebase.iid.FirebaseInstanceId;
@@ -131,7 +131,6 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 startActivity(browserIntent);
 
-                // Toast.makeText(SignUpActivity.this, "terms and conditions", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -277,7 +276,6 @@ public class SignUpActivity extends BaseActivity implements View.OnClickListener
 
                         } else if (jsonObject.optString("success").equals("false")) {
                             JSONObject offerObject = jsonObject.optJSONObject("error");
-                            Toast.makeText(getApplicationContext(), offerObject.optString("message"), Toast.LENGTH_SHORT).show();
 
 
                         }

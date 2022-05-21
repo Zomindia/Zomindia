@@ -230,7 +230,6 @@ public class EditProfileUserActivity extends BaseActivity implements View.OnClic
                             JSONObject jsonObject = object.optJSONObject("data");
 
                             finish();
-                            Constants.showToastAlert("Success", EditProfileUserActivity.this);
 
 
                         } else if (object.optString(Constants.SUCCESS).equalsIgnoreCase(Constants.FALSE)) {
@@ -240,13 +239,13 @@ public class EditProfileUserActivity extends BaseActivity implements View.OnClic
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(EditProfileUserActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), EditProfileUserActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), EditProfileUserActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), EditProfileUserActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), EditProfileUserActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();

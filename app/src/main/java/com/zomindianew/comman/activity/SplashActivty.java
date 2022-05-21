@@ -120,7 +120,6 @@ public class SplashActivty extends BaseActivity {
                 destLogo.setVisibility(View.GONE);
 
                 //    imageView_fav_icon.setImageResource(R.mipmap.fav_orange_star);
-                //   Toast.makeText(MainActivity.this, "Continue Shopping...", Toast.LENGTH_SHORT).show();
             }
 
             @Override

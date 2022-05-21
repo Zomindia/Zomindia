@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.zomindianew.R;
 import com.zomindianew.helper.Constants;
@@ -93,7 +93,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                             startActivity(intent);
                         } else if (jsonObject.getString("success").equals("false")) {
                             JSONObject offerObject = jsonObject.getJSONObject("error");
-                            Toast.makeText(getApplicationContext(), offerObject.getString("message"), Toast.LENGTH_SHORT).show();
+
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();

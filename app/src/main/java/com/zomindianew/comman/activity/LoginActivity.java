@@ -278,7 +278,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                         {
                             JSONObject offerObject = jsonObject.getJSONObject("error");
 
-                            Toast.makeText(getApplicationContext(),offerObject.getString("message"),Toast.LENGTH_SHORT).show();
 
 
                         }

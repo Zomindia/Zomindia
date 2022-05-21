@@ -49,17 +49,7 @@ public class SelectSubActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_sub);
 
         recyclerView = (RecyclerView) findViewById(R.id.select_subcategoryRecycle);
-      //  toolbar = (Toolbar) findViewById(R.id.homeToolbar);
-  //     toolbar.setTitle("fds");
-//        toolbar.setNavigationIcon(getResources().getDrawable(R.mipmap.ic_back_white));
-//        toolbar.setTitleTextColor(android.graphics.Color.WHITE);
-//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onBackPressed();
-//
-//            }
-//        });
+
 
         sid = getIntent().getStringExtra("id");
         sName = getIntent().getStringExtra("name");
@@ -145,13 +135,13 @@ public class SelectSubActivity extends AppCompatActivity {
                         if (response.code() == 401) {
                             Constants.showSessionExpireAlert(SelectSubActivity.this);
                         } else {
-                            Constants.showToastAlert(ErrorUtils.getHtttpCodeError(response.code()), SelectSubActivity.this);
+                            Constants.showToastAlert(getResources().getString(R.string.failled), SelectSubActivity.this);
                         }
 
                     } else {
                         String responseStr = ErrorUtils.getResponseBody(response);
                         JSONObject jsonObject = new JSONObject(responseStr);
-                        Constants.showToastAlert(ErrorUtils.checkJosnErrorBody(jsonObject), SelectSubActivity.this);
+                        Constants.showToastAlert(getResources().getString(R.string.failled), SelectSubActivity.this);
                     }
                 } catch (JSONException e) {
                     Constants.hideProgressDialog();
